@@ -5,7 +5,9 @@ date: "9/8/2018"
 output: pdf_document
 ---
 
-1. Add
+1. In Introduction.Rmd, Error in loadNamespace(name) : there is no package called 'readr'
+Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
 * add
 
 
