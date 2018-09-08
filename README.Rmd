@@ -5,9 +5,47 @@ date: "9/8/2018"
 output: pdf_document
 ---
 
-1. In Introduction.Rmd, Error in loadNamespace(name) : there is no package called 'readr'
+1. *In Introduction.Rmd, Error in loadNamespace(name) : there is no package called 'readr'
 Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
-Execution halted
-* add
+Execution halted*
+* Install 'readr' package
+\vspace{8mm}
+
+2. *In Introduction.Rmd, Error in loadNamespace(name) : there is no package called 'sessioninfo'
+Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted*
+* Install 'sessioninfo' package
+\vspace{8mm}
+
+3. *In Names-values.Rmd, Error in library(lobstr) : there is no package called 'lobstr'
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
+Execution halted*
+* The 'lobstr' package is not in CRAN, we need to install 'devtools' first and write the following codes to install 'lobstr' package
+
+
+```{r}
+# install.packages("devtools")
+devtools::install_github("r-lib/lobstr")
+```
+\vspace{8mm}
+
+4. *In Conditions.Rmd, Error in library(testthat) : there is no package called 'testthat'
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
+Execution halted*
+* Install 'testthat' package
+\vspace{8mm}
+
+5. *In Conditions.Rmd, on line 614, the abort() function is from 'rlang' package. The version of this package on CRAN is 0.2.2 while on github the version is 0.2.29000. The definition of function abort() is quite different in these two versions and I found to avoid the error we need to use version 0.2.2.9000 which cannnot be installed from CRAN*
+* The package 'rlang', version 0.2.2.9000 is not on CRAN, we need to install 'devtools' first and write the following codes to install 'rlang' package with version 0.2.2.9000
+
+```{r}
+# install.packages("devtools")
+devtools::install_github("r-lib/rlang", build_vignettes = TRUE)
+```
+\vspace{8mm}
+
+6. **
+
+
 
 
