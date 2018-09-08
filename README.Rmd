@@ -5,6 +5,11 @@ date: "9/8/2018"
 output: pdf_document
 ---
 
+\center
+**For Mac users, update R and R Studio, install XQuartx, Xcode first!!!**
+\center
+\vspace{5mm}
+
 1. *In Introduction.Rmd, Error in loadNamespace(name) : there is no package called 'readr'
 Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
 Execution halted*
