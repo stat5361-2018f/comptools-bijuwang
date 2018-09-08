@@ -1,5 +1,5 @@
 ---
-title: "The Problems Encountred During Building the Book"
+title: "The Problems Encountered During Building the Book"
 author: "Biju Wang"
 date: "9/8/2018"
 output: pdf_document
@@ -21,8 +21,6 @@ Execution halted*
 Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
 Execution halted*
 * The 'lobstr' package is not in CRAN, we need to install 'devtools' first and write the following codes to install 'lobstr' package
-
-
 ```{r}
 # install.packages("devtools")
 devtools::install_github("r-lib/lobstr")
@@ -37,15 +35,89 @@ Execution halted*
 
 5. *In Conditions.Rmd, on line 614, the abort() function is from 'rlang' package. The version of this package on CRAN is 0.2.2 while on github the version is 0.2.29000. The definition of function abort() is quite different in these two versions and I found to avoid the error we need to use version 0.2.2.9000 which cannnot be installed from CRAN*
 * The package 'rlang', version 0.2.2.9000 is not on CRAN, we need to install 'devtools' first and write the following codes to install 'rlang' package with version 0.2.2.9000
-
 ```{r}
 # install.packages("devtools")
 devtools::install_github("r-lib/rlang", build_vignettes = TRUE)
 ```
 \vspace{8mm}
 
-6. **
+6. *In Functionals.Rmd, Error in loadNamespace(name) : there is no package called 'emo'
+Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted*
+* The 'emo' package is not in CRAN, we need to install 'devtools' first and write the following codes to install 'emo' package
+```{r}
+# install.packages("devtools")
+devtools::install_github("hadley/emo")
+```
+\vspace{8mm}
 
+7. *In Function-operators.Rmd, Error in library(pryr) : there is no package called 'pryr'
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
+Execution halted*
+* Install 'pryr' package
+\vspace{8mm}
+
+8. *In OO.Rmd, Error in library(sloop) : there is no package called 'sloop'
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
+Execution halted*
+* The 'sloop' package is not in CRAN, we need to install 'devtools' first and write the following codes to install 'sloop' package
+```{r}
+# install.packages("devtools")
+devtools::install_github("hadley/S3")
+```
+\vspace{8mm}
+
+9. *In R6.Rmd, Error in loadNamespace(name) : there is no package called 'RSQLite'
+Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted*
+* Install 'RSQLite' package
+\vspace{8mm}
+
+10. *In OO-tradeoffs.Rmd, Error in library(zeallot) : there is no package called 'zeallot'
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
+Execution halted*
+* Install 'zeallot' package
+\vspace{8mm}
+
+11. *In Expressions.Rmd, Error in loadNamespace(name) : 
+  there is no package called 'microbenchmark'
+Calls: local ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted*
+* Install 'microbenchmark' package
+\vspace{8mm}
+
+12. *In Profiling.Rmd, Error in library(lineprof) : there is no package called 'lineprof'
+Calls: local ... withCallingHandlers -> withVisible -> eval -> eval -> library
+Execution halted*
+* The 'lineprof' package is not in CRAN, we need to install 'devtools' first and write the following codes to install 'lineprof' package
+```{r}
+# install.packages("devtools")
+devtools::install_github("hadley/lineprof")
+```
+\vspace{8mm}
+
+
+**At this point, I could get the html version of this book. While I opened
+adv-r.Rproj to build the book by clicking Build Book button and then bookdown::pdf_book, other errors occurred.**
+\vspace{8mm}
+
+13. *pandoc: unrecognized option `--lua-filter=latex/sidebar.lua' Try pandoc --help for more information. Error: pandoc document conversion failed with error 2*
+* Google pandoc and install this software could fix this error
+\vspace{8mm}
+
+14. *tlmgr search --file --global '/Inconsolata[.](tfm|afm|mf|otf)'
+! fontspec error: "font-not-found"
+! 
+! The font "Inconsolata" cannot be found.
+! 
+! See the fontspec documentation for further information.
+! 
+! For immediate help type H <return>.
+!...............................................*
+* Download the .ttf file of inconsolata font from github and put this file into /Library/Fonts on my Macbook can fix the error
+\vspace{8mm}
+
+**This is the end of all the errors.**
 
 
 
