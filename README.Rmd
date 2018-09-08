@@ -1,0 +1,11 @@
+---
+title: "The Problems Encountred During Building the Book"
+author: "Biju Wang"
+date: "9/8/2018"
+output: pdf_document
+---
+
+1. Add
+* add
+
+
